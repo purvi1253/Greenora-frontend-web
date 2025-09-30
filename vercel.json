@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_FIREBASE_API_KEY": "AIzaSyC4gpwagzkwNui0zUTorACQbqU-em2VR0c",
+    "VITE_FIREBASE_AUTH_DOMAIN": "greenora-a7eb8.firebaseapp.com",
+    "VITE_FIREBASE_PROJECT_ID": "greenora-a7eb8",
+    "VITE_FIREBASE_STORAGE_BUCKET": "greenora-a7eb8.firebasestorage.app",
+    "VITE_FIREBASE_MESSAGING_SENDER_ID": "586745463559",
+    "VITE_FIREBASE_APP_ID": "1:586745463559:web:473fccd12b291084c2fba2",
+    "VITE_API_URL": "https://greenora-backend-api.onrender.com"
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
+}

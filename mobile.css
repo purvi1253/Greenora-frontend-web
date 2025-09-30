@@ -1,0 +1,83 @@
+/* Cross-browser mobile optimizations */
+
+/* Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .mobile-view {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Firefox mobile optimizations */
+@-moz-document url-prefix() {
+  .plant-card {
+    transform: none; /* Firefox transform issues fix */
+  }
+}
+
+/* Microsoft Edge support */
+@supports (-ms-ime-align: auto) {
+  .navbar {
+    -ms-overflow-style: none;
+  }
+}
+
+/* Universal mobile touch improvements */
+@media (max-width: 768px) {
+  /* Prevent text size adjustment */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Touch-friendly buttons */
+  button, .btn, .nav-link {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Prevent pull-to-refresh on mobile */
+  body {
+    overscroll-behavior-y: contain;
+  }
+}
+
+/* PWA Install Prompt - Cross-browser */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: none;
+  
+  /* Cross-browser backdrop */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Browser-specific scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px;
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 #f1f1f1;
+}
